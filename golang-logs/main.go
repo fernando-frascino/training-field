@@ -1,9 +1,9 @@
-// package main
+package main
 
 // import (
 // 	"github.com/fernando-frascino/golang-logs/loggers"
 // )
 
-// func main() {
+func main() {
 
-// }
+}
