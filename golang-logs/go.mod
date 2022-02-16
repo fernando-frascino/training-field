@@ -1,4 +1,4 @@
-module github.com/fernando-frascino/golang-logs
+module golang-logs
 
 go 1.17
 

@@ -2,5 +2,5 @@ logrus    github.com/sirupsen/logrus
 zerolog   github.com/rs/zerolog
 zap       github.com/uber-go/zap
 
-data-dog example with logrus
+datadog example with logrus
 https://docs.datadoghq.com/logs/log_collection/go/
