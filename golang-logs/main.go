@@ -2,14 +2,19 @@ package main
 
 import (
 	"golang-logs/loggers"
+	productModel "golang-logs/models"
 )
 
 func main() {
-	loggers.LogrusLogger()
 
-	loggers.LogrusError("Error parsing message")
-	// loggers.LogrusErrorWithMetadata("Failed to process request", log.Fields{
-	// 	"document": "6181681681",
-	// 	"error":    "Error calling API",
-	// })
+	product := productModel.NewProduct()
+	// formattedProduct, _ := json.Marshal(product)
+	// stringProduct := string(formattedProduct)
+
+	// loggers.SetupLogrus()
+	// loggers.LogrusError(stringProduct)
+	// fmt.Println("====================")
+
+	loggers.ZerologError("error shipping product", product, product)
+	// fmt.Println("====================")
 }

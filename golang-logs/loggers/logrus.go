@@ -1,34 +1,18 @@
 package loggers
 
 import (
-	log "github.com/sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 )
 
-func LogrusLogger() {
-	log.SetFormatter(&log.JSONFormatter{})
-
-	// log.SetReportCaller(true)
-
-	//simple logging
-	// log.WithFields(log.Fields{
-	// 	"document": "2398472938423",
-	// 	"error":    "Error calling API",
-	// }).Error()
-
+func SetupLogrus() {
+	logrus.SetFormatter(&logrus.JSONFormatter{})
+	logrus.SetReportCaller(true)
 }
 
-func LogrusError(message string) {
-	if len(message) == 0 {
-		message = "Empty message, please log something"
-	}
-	log.Error(message)
+func LogrusError(meta interface{}) {
+	// if meta == "" {
+	// 	logrus.Error(message)
+	// }
+	// logrus.Error(message, meta)
+	logrus.Error(meta)
 }
-
-// func LogrusErrorWithMetadata(message string, meta map[string]) {
-
-// 	if len(meta) == 0 {
-// 		log.Error(message)
-// 	} else {meta
-// 		log.WithFields(lof.Field(meta)).Error(message)
-// 	}
-// }
