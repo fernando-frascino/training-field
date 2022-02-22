@@ -9,16 +9,12 @@ import (
 
 func SetupZerolog() {
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
-
-	log.Print("hello world")
-
 }
 
-func ZerologError(message string, meta ...interface{}) {
-	l := log.Error()
+func ZerologError(message string, meta map[string]interface{}) {
+	zero := log.Error()
 	for key, value := range meta {
-		l.Interface(fmt.Sprint(key), value)
+		zero.Interface(fmt.Sprint(key), value)
 	}
-
-	l.Msg(message)
+	zero.Msg(message)
 }
